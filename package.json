@@ -1,0 +1,114 @@
+{
+  "name": "smst-design-system",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:morpheusapps/smst-design-system.git",
+  "author": "maorRoz <andory@post.bgu.ac.il>",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/react": "^5.2.4",
+    "@types/enzyme": "^3.10.2",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/faker": "^4.1.5",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.8",
+    "@types/react": "^16.9.3",
+    "@types/react-dom": "16.9.1",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/storybook__react": "^4.0.2",
+    "@types/styled-components": "^4.1.19",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/experimental-utils": "^1.11.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.0",
+    "enzyme-to-json": "^3.4.2",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.13.7",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "faker": "^4.1.0",
+    "husky": "^3.0.1",
+    "jest": "^24.8.0",
+    "jest-express": "^1.10.1",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "react-docgen-typescript-loader": "^3.2.1",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "source-map-loader": "^0.2.4",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "styled-components": "^4.4.0"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "build:publish": "yarn build && npm publish",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook:build": "build-storybook -c .storybook -o .out",
+    "lint": "eslint . --ext .ts --fix",
+    "test": "jest --runInBand --watch",
+    "test:all": "jest --runInBand",
+    "test:coverage": "jest --runInBand --coverage"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "setupFiles": [
+      "<rootDir>/test-utils/enzymeSetup.ts"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/?(*.)(test).(ts|tsx)"
+    ],
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "collectCoverageFrom": [
+      "src/redux/**/*.ts",
+      "src/components/**/*.tsx",
+      "src/components/**/*.ts",
+      "src/selectors/**/*.ts",
+      "src/utils/**/*.ts",
+      "src/domain/**/*.ts"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index --again",
+      "pre-commit": "yarn lint && git add && lint-staged"
+    }
+  }
+}
