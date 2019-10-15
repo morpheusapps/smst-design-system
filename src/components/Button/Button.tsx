@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ButtonLayout } from './Button.styled';
 import { ContainerProps, DisplayProps } from '../../types';
 
