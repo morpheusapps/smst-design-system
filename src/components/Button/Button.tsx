@@ -1,16 +1,22 @@
 import React from 'react';
 import { ButtonLayout } from './Button.styled';
-import { ContainerProps, DisplayProps } from '../../types';
+import { ContainerProps, DisplayProps, DynamicSizeProps } from '../../types';
 
 export type ButtonProps = DisplayProps &
+  DynamicSizeProps &
   ContainerProps & {
     onClick: (event: React.MouseEvent<HTMLElement>) => void;
     text?: string;
-    width?: number;
   };
 
-export const Button = ({ onClick, text, width, children }: ButtonProps) => (
-  <ButtonLayout width={width} onClick={onClick}>
+export const Button = ({
+  onClick,
+  text,
+  width,
+  height,
+  children
+}: ButtonProps) => (
+  <ButtonLayout width={width} height={height} onClick={onClick}>
     {text || children}
   </ButtonLayout>
 );
