@@ -4,6 +4,7 @@ import { withConsole } from '@storybook/addon-console';
 import { withStorySource } from '@storybook/addon-storysource';
 import { withKnobs } from '@storybook/addon-knobs';
 import { themes } from '@storybook/theming';
+import { withGlobalStyle } from './withGlobalStyle';
 
 const req = require.context('../src', true, /\.story\.tsx$/);
 
@@ -20,5 +21,6 @@ addParameters({
 addDecorator(centered);
 addDecorator(withKnobs);
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
+addDecorator(withGlobalStyle);
 
 configure(loadStories, module);
