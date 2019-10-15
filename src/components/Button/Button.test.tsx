@@ -1,14 +1,29 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Button } from './Button';
+import { Button, ButtonProps } from './Button';
 import { Fakes } from '../../../test-utils/Fakes';
+import { Sample } from '../../../test-utils/Sample';
 
 describe('<Button>', () => {
+  let props: ButtonProps;
+
   const childElement = <div id="child" />;
+
+  beforeEach(() => {
+    props = {
+      className: Fakes.stringOptional(),
+      onClick: jest.fn(),
+      onHover: Sample([jest.fn(), undefined]),
+      text: Fakes.stringOptional(),
+      width: Fakes.numberOptional(),
+      height: Fakes.numberOptional()
+    };
+  });
+
   test('self closing', () => {
     const expectedText = Fakes.string();
 
-    const wrapper = shallow(<Button text={expectedText} onClick={jest.fn()} />);
+    const wrapper = shallow(<Button {...props} text={expectedText} />);
 
     const { children } = wrapper.props();
 
@@ -17,7 +32,9 @@ describe('<Button>', () => {
 
   test('non-self-closing', () => {
     const wrapper = shallow(
-      <Button onClick={jest.fn()}>{childElement}</Button>
+      <Button {...props} text={undefined}>
+        {childElement}
+      </Button>
     );
 
     const { children } = wrapper.props();
@@ -29,7 +46,7 @@ describe('<Button>', () => {
     const expectedText = Fakes.string();
 
     const wrapper = shallow(
-      <Button text={expectedText} onClick={jest.fn()}>
+      <Button {...props} text={expectedText}>
         {childElement}
       </Button>
     );
@@ -46,5 +63,14 @@ describe('<Button>', () => {
     wrapper.simulate('click');
 
     expect(onClickFn).toHaveBeenCalled();
+  });
+
+  test('onHover', () => {
+    const onHoverFn = jest.fn();
+    const wrapper = shallow(<Button {...props} onHover={onHoverFn} />);
+
+    wrapper.simulate('mouseenter');
+
+    expect(onHoverFn).toHaveBeenCalled();
   });
 });
