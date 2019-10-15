@@ -1,7 +1,6 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
 import { withConsole } from '@storybook/addon-console';
-import { withStorySource } from '@storybook/addon-storysource';
 import { withKnobs } from '@storybook/addon-knobs';
 import { themes } from '@storybook/theming';
 import { withGlobalStyle } from './withGlobalStyle';
