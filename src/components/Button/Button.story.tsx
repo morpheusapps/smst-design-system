@@ -17,17 +17,41 @@ export default {
 };
 
 export const allButtons = () => (
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      width: '700px'
-    }}
-  >
-    <Button {...createDefaultProps()} text={text('Button1 Text', 'Button1')} />
-    <Button {...createDefaultProps()} text={text('Button2 Text', 'Button2')} />
-    <Button {...createDefaultProps()} text={text('Button3 Text', 'Button3')} />
-  </div>
+  <>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '700px'
+      }}
+    >
+      <Button
+        onClick={action('button clicked!')}
+        text="important"
+        theme="important"
+      />
+      <Button
+        onClick={action('button clicked!')}
+        text="positive"
+        theme="positive"
+      />
+      <Button
+        onClick={action('button clicked!')}
+        text="primary"
+        theme="primary"
+      />
+      <Button
+        onClick={action('button clicked!')}
+        text="secondary"
+        theme="secondary"
+      />
+      <Button
+        onClick={action('button clicked!')}
+        text="tertiary"
+        theme="tertiary"
+      />
+    </div>
+  </>
 );
 
 export const containerButton = () => (

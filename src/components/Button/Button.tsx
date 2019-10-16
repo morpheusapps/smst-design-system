@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemesMap } from './ButtonThemes';
 import { ButtonLayout } from './Button.styled';
 import { ContainerProps, DisplayProps, DynamicSizeProps } from '../../types';
 
@@ -12,6 +13,11 @@ export type ButtonProps = DisplayProps &
      * a self-closing component. children will be ignored in that case
      **/
     text?: string;
+    /**
+     * Selecting a button theme, effecting mostly the color
+     * of the button box and text
+     **/
+    theme?: 'important' | 'positive' | 'primary' | 'secondary' | 'tertiary';
   };
 
 /**
@@ -22,6 +28,7 @@ export const Button = ({
   onClick,
   onHover,
   text,
+  theme = 'primary',
   width,
   height,
   children
@@ -32,6 +39,7 @@ export const Button = ({
     height={height}
     onClick={onClick}
     onMouseEnter={onHover}
+    buttonTheme={ThemesMap[theme]}
   >
     {text || children}
   </ButtonLayout>
