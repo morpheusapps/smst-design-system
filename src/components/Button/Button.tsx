@@ -14,8 +14,8 @@ export type ButtonProps = DisplayProps &
      **/
     text?: string;
     /**
-     * Selecting a button theme, effecting mostly the color
-     * of the button box and text
+     * Select button theme
+     *
      **/
     theme?: 'important' | 'positive' | 'primary' | 'secondary' | 'tertiary';
   };
