@@ -1,12 +1,12 @@
 module.exports = ({ config }) => {
   config.module.rules.push({
-    test: /\.story\.tsx$/,
+    test: /\.story\.(tsx|mdx)$/,
     loaders: [
       {
-        loader: require.resolve('@storybook/source-loader'),
-        options: { parser: 'typescript' }
+        loader: require.resolve('@storybook/source-loader')
       }
     ],
+    exclude: [/node_modules/],
     enforce: 'pre'
   });
 

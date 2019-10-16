@@ -7,9 +7,16 @@ export type ButtonProps = DisplayProps &
   ContainerProps & {
     onClick: (event: React.MouseEvent<HTMLElement>) => void;
     onHover?: (event: React.MouseEvent<HTMLElement>) => void;
+    /**
+     * If provided, used as the text on the button
+     * as a self closing component, children will be ignored!
+     **/
     text?: string;
   };
 
+/**
+ * `Button` is the main button component of semesterion UI
+ */
 export const Button = ({
   className,
   onClick,
