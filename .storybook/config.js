@@ -18,7 +18,7 @@ addParameters({
 
 addDecorator(withKnobs);
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
-addDecorator(withGlobalStyle);
 addDecorator(withCenter);
+addDecorator(withGlobalStyle);
 
 configure(require.context('../src', true, /\.story\.(tsx|mdx)$/), module);

@@ -12,10 +12,7 @@ const createDefaultProps = () => ({
 const createTextKnob = () => text('Button Text', 'Text');
 export default {
   component: Button,
-  title: 'Button',
-  parameters: {
-    componentSubtitle: 'button'
-  }
+  title: 'Button'
 };
 
 export const containerButton = () => (
