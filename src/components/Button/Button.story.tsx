@@ -10,10 +10,25 @@ const createDefaultProps = () => ({
 });
 
 const createTextKnob = () => text('Button Text', 'Text');
+
 export default {
   component: Button,
   title: 'Button'
 };
+
+export const allButtons = () => (
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      width: '700px'
+    }}
+  >
+    <Button {...createDefaultProps()} text={text('Button1 Text', 'Button1')} />
+    <Button {...createDefaultProps()} text={text('Button2 Text', 'Button2')} />
+    <Button {...createDefaultProps()} text={text('Button3 Text', 'Button3')} />
+  </div>
+);
 
 export const containerButton = () => (
   <Button {...createDefaultProps()}>{createTextKnob()}</Button>
