@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { ThemesMap } from './ButtonThemes';
 import { ButtonLayout } from './Button.styled';
 import { ContainerProps, DisplayProps, DynamicSizeProps } from '../../types';
@@ -18,6 +18,7 @@ export type ButtonProps = DisplayProps &
      *
      **/
     theme?: 'negative' | 'positive' | 'primary' | 'secondary' | 'tertiary';
+    disabled?: boolean;
   };
 
 /**
@@ -29,18 +30,33 @@ export const Button = ({
   onHover,
   text,
   theme = 'primary',
+  disabled,
   width,
   height,
   children
-}: ButtonProps) => (
-  <ButtonLayout
-    className={className}
-    width={width}
-    height={height}
-    onClick={onClick}
-    onMouseEnter={onHover}
-    buttonTheme={ThemesMap[theme]}
-  >
-    {text || children}
-  </ButtonLayout>
-);
+}: ButtonProps) => {
+  const onClickFn = useCallback(
+    (event: React.MouseEvent<HTMLElement>) => !disabled && onClick(event),
+    [onClick, disabled]
+  );
+
+  const onHoverFn = useCallback(
+    (event: React.MouseEvent<HTMLElement>) =>
+      !disabled && onHover && onHover(event),
+    [onClick, onHover, disabled]
+  );
+
+  return (
+    <ButtonLayout
+      className={className}
+      width={width}
+      height={height}
+      onClick={onClickFn}
+      onMouseEnter={onHoverFn}
+      buttonTheme={ThemesMap[theme]}
+      disabled={disabled}
+    >
+      {text || children}
+    </ButtonLayout>
+  );
+};

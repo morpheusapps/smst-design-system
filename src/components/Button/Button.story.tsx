@@ -5,7 +5,7 @@ import { Button } from './Button';
 
 const createDefaultProps = () => ({
   onClick: action('button clicked!'),
-  width: number('Button Width', 150),
+  width: number('Button Width', 118),
   height: number('Button Height', 20)
 });
 
@@ -49,6 +49,44 @@ export const allButtons = () => (
         onClick={action('button clicked!')}
         text="tertiary"
         theme="tertiary"
+      />
+    </div>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '700px'
+      }}
+    >
+      <Button
+        onClick={action('button clicked!')}
+        text="negative"
+        theme="negative"
+        disabled
+      />
+      <Button
+        onClick={action('button clicked!')}
+        text="positive"
+        theme="positive"
+        disabled
+      />
+      <Button
+        onClick={action('button clicked!')}
+        text="primary"
+        theme="primary"
+        disabled
+      />
+      <Button
+        onClick={action('button clicked!')}
+        text="secondary"
+        theme="secondary"
+        disabled
+      />
+      <Button
+        onClick={action('button clicked!')}
+        text="tertiary"
+        theme="tertiary"
+        disabled
       />
     </div>
   </>
