@@ -17,7 +17,7 @@ export type ButtonProps = DisplayProps &
      * Select button theme
      *
      **/
-    theme?: 'important' | 'positive' | 'primary' | 'secondary' | 'tertiary';
+    theme?: 'negative' | 'positive' | 'primary' | 'secondary' | 'tertiary';
   };
 
 /**

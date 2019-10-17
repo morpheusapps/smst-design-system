@@ -1,5 +1,5 @@
 export type Themes =
-  | 'important'
+  | 'negative'
   | 'positive'
   | 'primary'
   | 'secondary'
@@ -14,14 +14,14 @@ export interface ThemeProps {
 }
 
 export const ThemesMap: Record<Themes, ThemeProps> = {
-  important: {
-    color: '#d43f3a',
-    hoverColor: '#d9534f',
+  negative: {
+    color: '#b53f53',
+    hoverColor: '#e34f68',
     textColor: 'white'
   },
   positive: {
     color: '#4cae4c',
-    hoverColor: '#5cb85c',
+    hoverColor: '#63db63',
     textColor: 'white'
   },
   primary: {

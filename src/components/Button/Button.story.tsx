@@ -27,8 +27,8 @@ export const allButtons = () => (
     >
       <Button
         onClick={action('button clicked!')}
-        text="important"
-        theme="important"
+        text="negative"
+        theme="negative"
       />
       <Button
         onClick={action('button clicked!')}
