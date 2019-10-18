@@ -1,12 +1,24 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, number } from '@storybook/addon-knobs';
+import { text, number, select, boolean } from '@storybook/addon-knobs';
+import { Themes } from './ButtonThemes';
 import { Button } from './Button';
+
+const ThemeArray: Themes[] = [
+  'negative',
+  'positive',
+  'primary',
+  'secondary',
+  'tertiary'
+];
 
 const createDefaultProps = () => ({
   onClick: action('button clicked!'),
   width: number('Button Width', 118),
-  height: number('Button Height', 20)
+  height: number('Button Height', 20),
+  theme: select('Button Theme', ThemeArray, 'primary'),
+  disabled: boolean('Button Disabled', false),
+  busy: boolean('Button Busy', false)
 });
 
 const createTextKnob = () => text('Button Text', 'Text');
@@ -60,31 +72,31 @@ export const allButtons = () => (
     >
       <Button
         onClick={action('button clicked!')}
-        text="negative"
+        text="disabled"
         theme="negative"
         disabled
       />
       <Button
         onClick={action('button clicked!')}
-        text="positive"
+        text="disabled"
         theme="positive"
         disabled
       />
       <Button
         onClick={action('button clicked!')}
-        text="primary"
+        text="disabled"
         theme="primary"
         disabled
       />
       <Button
         onClick={action('button clicked!')}
-        text="secondary"
+        text="disabled"
         theme="secondary"
         disabled
       />
       <Button
         onClick={action('button clicked!')}
-        text="tertiary"
+        text="disabled"
         theme="tertiary"
         disabled
       />
@@ -105,3 +117,20 @@ export const buttonWithMouseOver = () => (
     {createTextKnob()}
   </Button>
 );
+
+export const asyncButton = () => {
+  const asyncOnClick = (): Promise<void> =>
+    new Promise(resolve =>
+      // eslint-disable-next-line no-console
+      setTimeout(() => resolve(console.log('async action fired!')), 2000)
+    );
+
+  return (
+    <Button
+      {...createDefaultProps()}
+      onClick={() => asyncOnClick()}
+      text={createTextKnob()}
+      async={boolean('Button Async', true)}
+    />
+  );
+};

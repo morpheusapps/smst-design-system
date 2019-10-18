@@ -1,9 +1,9 @@
 import React from 'react';
-import { GoogleIcon } from './GoogleIcon';
+import { GoogleAuthButton } from './GoogleAuthButton';
 
 export default {
-  component: GoogleIcon,
+  component: GoogleAuthButton,
   title: 'GoogleAuthButton'
 };
 
-export const wtf = () => <GoogleIcon />;
+export const view = () => <GoogleAuthButton url="wtf" />;

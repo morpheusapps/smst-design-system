@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-weight: 450;
     font-size: 14px;
   }
 `;
