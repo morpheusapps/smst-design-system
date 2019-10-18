@@ -25,7 +25,7 @@ const createTextKnob = () => text('Button Text', 'Text');
 
 export default {
   component: Button,
-  title: 'Button'
+  title: 'Buttons|Button'
 };
 
 export const allButtons = () => (
@@ -33,7 +33,6 @@ export const allButtons = () => (
     <div
       style={{
         display: 'flex',
-        justifyContent: 'space-between',
         width: '700px'
       }}
     >
@@ -66,7 +65,6 @@ export const allButtons = () => (
     <div
       style={{
         display: 'flex',
-        justifyContent: 'space-between',
         width: '700px'
       }}
     >

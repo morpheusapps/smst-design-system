@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleIcon } from './GoogleIcon';
+import { Languages, TextsPerLanguage } from './GoogleAuthButtonTexts';
 import {
   GoogleAuthButtonLayout,
   GoogleTextPlaceholder
@@ -7,15 +8,21 @@ import {
 
 export type GoogleAuthButtonProps = {
   url: string;
-  text?: string;
+  /**
+   * Determine the language of the button text
+   **/
+  language?: Languages;
 };
 
+/**
+ * `<GoogleAuthButton>` used for google authentication
+ */
 export const GoogleAuthButton = ({
   url,
-  text = 'Sign in with Google'
+  language = 'english'
 }: GoogleAuthButtonProps) => (
   <GoogleAuthButtonLayout href={url}>
     <GoogleIcon />
-    <GoogleTextPlaceholder>{text}</GoogleTextPlaceholder>
+    <GoogleTextPlaceholder>{TextsPerLanguage[language]}</GoogleTextPlaceholder>
   </GoogleAuthButtonLayout>
 );

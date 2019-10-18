@@ -3,7 +3,18 @@ import { GoogleAuthButton } from './GoogleAuthButton';
 
 export default {
   component: GoogleAuthButton,
-  title: 'GoogleAuthButton'
+  title: 'Buttons|GoogleAuthButton'
 };
 
-export const view = () => <GoogleAuthButton url="wtf" />;
+export const defaultView = () => (
+  <div
+    style={{
+      display: 'flex',
+      width: '500px',
+      justifyContent: 'space-between'
+    }}
+  >
+    <GoogleAuthButton url="/" />
+    <GoogleAuthButton url="/" language="hebrew" />
+  </div>
+);
