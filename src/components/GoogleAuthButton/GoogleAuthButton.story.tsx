@@ -6,7 +6,7 @@ export default {
   title: 'Buttons|GoogleAuthButton'
 };
 
-export const defaultView = () => (
+export const allLanguages = () => (
   <div
     style={{
       display: 'flex',
