@@ -1,7 +1,7 @@
 {
   "name": "smst-design-system",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
+  "main": "dist/index.js",
   "repository": "git@github.com:morpheusapps/smst-design-system.git",
   "author": "maorRoz <andory@post.bgu.ac.il>",
   "license": "MIT",
