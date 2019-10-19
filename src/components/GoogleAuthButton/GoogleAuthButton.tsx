@@ -5,8 +5,9 @@ import {
   GoogleAuthButtonLayout,
   GoogleTextPlaceholder
 } from './GoogleAuthButtonLayout.styled';
+import { DisplayProps } from '../../types';
 
-export type GoogleAuthButtonProps = {
+export type GoogleAuthButtonProps = DisplayProps & {
   url: string;
   /**
    * Determine the language of the button text
@@ -18,10 +19,15 @@ export type GoogleAuthButtonProps = {
  * `<GoogleAuthButton>` is used for google authentication
  */
 export const GoogleAuthButton = ({
+  className,
   url,
   language = 'english'
 }: GoogleAuthButtonProps) => (
-  <GoogleAuthButtonLayout href={url} data-test-id="google-login-button">
+  <GoogleAuthButtonLayout
+    className={className}
+    href={url}
+    data-test-id="google-login-button"
+  >
     <GoogleIcon />
     <GoogleTextPlaceholder>
       {TextsPerLanguage[language.toUpperCase()]}
