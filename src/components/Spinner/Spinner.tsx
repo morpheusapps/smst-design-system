@@ -4,6 +4,9 @@ import { DisplayProps, TestProps } from '../../types';
 
 export type SpinnerProps = DisplayProps & TestProps;
 
+/**
+ * `<Spinner>` is a spinner animation
+ */
 export const Spinner = ({ className, testId = '' }: SpinnerProps) => (
   <SpinnerAnimation
     className={className}

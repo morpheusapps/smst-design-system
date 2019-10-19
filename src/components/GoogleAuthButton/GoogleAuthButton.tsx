@@ -15,7 +15,7 @@ export type GoogleAuthButtonProps = {
 };
 
 /**
- * `<GoogleAuthButton>` used for google authentication
+ * `<GoogleAuthButton>` is used for google authentication
  */
 export const GoogleAuthButton = ({
   url,
