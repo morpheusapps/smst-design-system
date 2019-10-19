@@ -27,6 +27,7 @@ export const ButtonLayout = styled.div<ButtonLayoutProps>`
       : css`
           &:hover {
             cursor: pointer;
+            border: 1px solid ${buttonTheme.hoverColor};
             background-color: ${buttonTheme.hoverColor};
             color: ${buttonTheme.hoverTextColor};
           }
