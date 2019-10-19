@@ -13,4 +13,4 @@ declare module '*.svg' {
   export default svg;
 }
 
-export * from './dist';
+export * from './components';

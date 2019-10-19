@@ -20,6 +20,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "declaration": true,
+    "removeComments": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -33,5 +34,6 @@
     "src/**/*.story.tsx",
     "src/**/*.test.tsx",
     "src/**/*.test.ts"
-  ]
+  ],
+  "files": ["src/index.d.ts"]
 }
