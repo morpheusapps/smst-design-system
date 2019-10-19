@@ -1,6 +1,6 @@
 {
   "name": "smst-design-system",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "main": "index.js",
   "repository": "git@github.com:morpheusapps/smst-design-system.git",
   "author": "maorRoz <andory@post.bgu.ac.il>",
@@ -57,9 +57,9 @@
     "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
     "react": "^16.10.1",
-    "react-dom": "^16.10.1",
     "react-docgen-typescript-loader": "^3.2.1",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-dom": "^16.10.1",
     "source-map-loader": "^0.2.4",
     "styled-components": "^4.4.0",
     "ts-jest": "^24.0.2",
@@ -75,7 +75,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
-    "build:publish": "yarn build && npm publish",
+    "build:publish": "yarn build && yarn publish",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o .out",
     "lint": "eslint . --ext .ts --fix",
