@@ -7,8 +7,8 @@ import { useConditionalCallback } from '../../hooks';
 export type SimpleButtonProps = DisplayProps &
   DynamicSizeProps &
   ContainerProps & {
-    onClick: (event: React.MouseEvent<HTMLElement>) => Promise<void> | void;
-    onHover?: (event: React.MouseEvent<HTMLElement>) => Promise<void> | void;
+    onClick: (event?: React.MouseEvent<HTMLElement>) => any;
+    onHover?: (event?: React.MouseEvent<HTMLElement>) => any;
     /**
      * Select button theme
      *
