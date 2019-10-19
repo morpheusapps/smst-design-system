@@ -28,7 +28,9 @@ export const AsyncButton = ({
       onClick={asyncOnClick}
       disabled={disabled || busy || isInProgress}
     >
-      {!disabled && (busy || isInProgress) && <ButtonSpinner />}
+      {!disabled && (busy || isInProgress) && (
+        <ButtonSpinner testId={`${otherSimpleButtonProps.testId}-button`} />
+      )}
       {children}
     </SimpleButton>
   );

@@ -1,12 +1,18 @@
 import React from 'react';
 import { ThemesMap, Themes } from './ButtonThemes';
 import { ButtonLayout } from './Button.styled';
-import { ContainerProps, DisplayProps, DynamicSizeProps } from '../../types';
+import {
+  ContainerProps,
+  DisplayProps,
+  DynamicSizeProps,
+  TestProps
+} from '../../types';
 import { useConditionalCallback } from '../../hooks';
 
 export type SimpleButtonProps = DisplayProps &
   DynamicSizeProps &
-  ContainerProps & {
+  ContainerProps &
+  TestProps & {
     onClick: (event?: React.MouseEvent<HTMLElement>) => any;
     onHover?: (event?: React.MouseEvent<HTMLElement>) => any;
     /**
@@ -25,6 +31,7 @@ export const SimpleButton = ({
   disabled = false,
   width,
   height,
+  testId = '',
   children
 }: SimpleButtonProps) => {
   const onClickFn = useConditionalCallback(onClick, !disabled);
@@ -39,6 +46,7 @@ export const SimpleButton = ({
       onMouseEnter={onHoverFn}
       buttonTheme={ThemesMap[theme]}
       disabled={disabled}
+      data-testid={`${testId}-button`}
     >
       {children}
     </ButtonLayout>

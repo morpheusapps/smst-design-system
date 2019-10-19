@@ -21,8 +21,10 @@ export const GoogleAuthButton = ({
   url,
   language = 'english'
 }: GoogleAuthButtonProps) => (
-  <GoogleAuthButtonLayout href={url}>
+  <GoogleAuthButtonLayout href={url} data-test-id="google-login-button">
     <GoogleIcon />
-    <GoogleTextPlaceholder>{TextsPerLanguage[language]}</GoogleTextPlaceholder>
+    <GoogleTextPlaceholder>
+      {TextsPerLanguage[language.toUpperCase()]}
+    </GoogleTextPlaceholder>
   </GoogleAuthButtonLayout>
 );

@@ -1,6 +1,6 @@
 export type Languages = 'english' | 'hebrew';
 
-export const TextsPerLanguage = {
-  english: 'Sign in with Google',
-  hebrew: 'התחבר עם גוגל'
-};
+export enum TextsPerLanguage {
+  ENGLISH = 'Sign in with Google',
+  HEBREW = 'התחבר עם גוגל'
+}

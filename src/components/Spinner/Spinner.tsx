@@ -1,11 +1,15 @@
 import React from 'react';
 import { SpinnerAnimation } from './Spinner.styled';
-import { DisplayProps } from '../../types';
+import { DisplayProps, TestProps } from '../../types';
 
-export type SpinnerProps = DisplayProps;
+export type SpinnerProps = DisplayProps & TestProps;
 
-export const Spinner = ({ className }: SpinnerProps) => (
-  <SpinnerAnimation className={className} viewBox="0 0 50 50">
+export const Spinner = ({ className, testId = '' }: SpinnerProps) => (
+  <SpinnerAnimation
+    className={className}
+    viewBox="0 0 50 50"
+    data-testid={`${testId}-spinner`}
+  >
     <circle
       className="path"
       cx="25"
