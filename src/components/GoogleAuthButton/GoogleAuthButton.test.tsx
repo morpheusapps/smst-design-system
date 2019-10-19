@@ -29,29 +29,29 @@ describe('<Button>', () => {
     test('english - default', () => {
       const expectedText = TextsPerLanguage.ENGLISH;
 
-      const { queryByText } = render(<GoogleAuthButton url={Fakes.route()} />);
+      const { getByText } = render(<GoogleAuthButton url={Fakes.route()} />);
 
-      expect(queryByText(expectedText)).not.toBeNull();
+      expect(getByText(expectedText)).toBeDefined();
     });
 
     test('english', () => {
       const expectedText = TextsPerLanguage.ENGLISH;
 
-      const { queryByText } = render(
+      const { getByText } = render(
         <GoogleAuthButton url={Fakes.route()} language="english" />
       );
 
-      expect(queryByText(expectedText)).not.toBeNull();
+      expect(getByText(expectedText)).toBeDefined();
     });
 
     test('hebrew', () => {
       const expectedText = TextsPerLanguage.HEBREW;
 
-      const { queryByText } = render(
+      const { getByText } = render(
         <GoogleAuthButton url={Fakes.route()} language="hebrew" />
       );
 
-      expect(queryByText(expectedText)).not.toBeNull();
+      expect(getByText(expectedText)).toBeDefined();
     });
   });
 });

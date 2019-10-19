@@ -29,32 +29,32 @@ describe('<Button>', () => {
   test('self closing', () => {
     const expectedText = Fakes.string();
 
-    const { queryByText } = render(<Button {...props} text={expectedText} />);
+    const { getByText } = render(<Button {...props} text={expectedText} />);
 
-    expect(queryByText(expectedText)).not.toBeNull();
+    expect(getByText(expectedText)).toBeDefined();
   });
 
   describe('non self-closing', () => {
     test('only children provided', () => {
-      const { queryByText } = render(
+      const { getByText } = render(
         <Button {...props} text={undefined}>
           {childElement}
         </Button>
       );
 
-      expect(queryByText(childElementText)).not.toBeNull();
+      expect(getByText(childElementText)).toBeDefined();
     });
 
     test('text override children', () => {
       const expectedText = Fakes.string();
 
-      const { queryByText } = render(
+      const { getByText } = render(
         <Button {...props} text={expectedText}>
           {childElement}
         </Button>
       );
 
-      expect(queryByText(expectedText)).not.toBeNull();
+      expect(getByText(expectedText)).toBeDefined();
     });
   });
 
