@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { GoogleAuthButton, GoogleAuthButtonProps } from './GoogleAuthButton';
-import { TextsPerLanguage } from './GoogleAuthButtonTexts';
+import { TextPerLanguage } from './GoogleAuthButtonTexts';
 import { Fakes } from '../../../test-utils/Fakes';
 import { Sample } from '../../../test-utils/Sample';
 
@@ -27,7 +27,7 @@ describe('<Button>', () => {
 
   describe('text', () => {
     test('english - default', () => {
-      const expectedText = TextsPerLanguage.ENGLISH;
+      const expectedText = TextPerLanguage.english;
 
       const { getByText } = render(<GoogleAuthButton url={Fakes.route()} />);
 
@@ -35,7 +35,7 @@ describe('<Button>', () => {
     });
 
     test('english', () => {
-      const expectedText = TextsPerLanguage.ENGLISH;
+      const expectedText = TextPerLanguage.english;
 
       const { getByText } = render(
         <GoogleAuthButton url={Fakes.route()} language="english" />
@@ -45,7 +45,7 @@ describe('<Button>', () => {
     });
 
     test('hebrew', () => {
-      const expectedText = TextsPerLanguage.HEBREW;
+      const expectedText = TextPerLanguage.hebrew;
 
       const { getByText } = render(
         <GoogleAuthButton url={Fakes.route()} language="hebrew" />

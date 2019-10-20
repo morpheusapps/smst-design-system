@@ -1,6 +1,6 @@
-export type Languages = 'english' | 'hebrew';
+import { Language } from '../../const/Language';
 
-export enum TextsPerLanguage {
-  ENGLISH = 'Sign in with Google',
-  HEBREW = 'התחבר עם גוגל'
-}
+export const TextPerLanguage: Record<Language, string> = {
+  english: 'Sign in with Google',
+  hebrew: 'התחבר עם גוגל'
+};
