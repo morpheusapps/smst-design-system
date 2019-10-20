@@ -26,7 +26,7 @@ export const GoogleAuthButton = ({
   <GoogleAuthButtonLayout
     className={className}
     href={url}
-    data-test-id="google-login-button"
+    data-testid="google-login-button"
   >
     <GoogleIcon />
     <GoogleTextPlaceholder>
