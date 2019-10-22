@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { GoogleAuthButton, GoogleAuthButtonProps } from './GoogleAuthButton';
-import { TextPerLanguage } from './GoogleAuthButtonTexts';
+import { TextPerLanguage } from './GoogleAuthButton.text';
 import { Fakes } from '../../../test-utils/Fakes';
 import { Sample } from '../../../test-utils/Sample';
 

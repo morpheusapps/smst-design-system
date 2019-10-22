@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoogleIcon } from './GoogleIcon';
-import { TextPerLanguage } from './GoogleAuthButtonTexts';
+import { TextPerLanguage } from './GoogleAuthButton.text';
 import { Language } from '../../const/Language';
 import {
   GoogleAuthButtonLayout,
