@@ -3,3 +3,4 @@ export { DisplayProps } from './DisplayProps';
 export { DynamicSizeProps } from './DynamicSizeProps';
 export { AsyncProps } from './AsyncProps';
 export { TestProps } from './TestProps';
+export { LanguageProps } from './LanguageProps';
